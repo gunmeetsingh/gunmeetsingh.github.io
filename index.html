@@ -1,75 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Byte Sparrow - Software Consultancy</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #007BFF;
-            padding: 1em;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            color: #fff;
-        }
-        section {
-            text-align: center;
-            padding: 2em;
-        }
-        footer {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteSparrow - Startup Projects</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --text-light: #111827;
+      --card-light: #fff;
+      --footer-light: #f3f4f6;
+
+      --bg-dark: #1f2937;
+      --text-dark: #f9fafb;
+      --card-dark: #374151;
+      --footer-dark: #111827;
+
+      --primary: #2563eb;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark body {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #9ca3af;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: #1e40af;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #6b7280;
+    }
+
+    .dark .intro p {
+      color: #d1d5db;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card-light);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.25s, box-shadow 0.25s, background 0.3s, color 0.3s;
+    }
+
+    .dark .card {
+      background: var(--card-dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+
+    .dark .card h3 {
+      color: var(--text-dark);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #6b7280;
+    }
+
+    .dark .card p {
+      color: #d1d5db;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .card a:hover {
+      color: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--footer-light);
+      color: #666;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark footer {
+      background: var(--footer-dark);
+      color: #d1d5db;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>ByteSparrow</h1>
+    <div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+  </header>
 
-    <header>
-        <h1>Byte Sparrow</h1>
-        <p>Your Partner in Software Excellence</p>
-    </header>
+  <section class="intro">
+    <h2>Welcome to ByteSparrow</h2>
+    <p>
+      ByteSparrow is a startup dedicated to creating innovative and useful websites 
+      that make everyday life easier. Explore our existing projects below and stay 
+      tuned for future launches.
+    </p>
+  </section>
 
-    <section>
-        <h2>Welcome to Byte Sparrow</h2>
-        <p>We specialize in delivering innovative software solutions tailored to your business needs. Our expert consultants are ready to assist you at every step of your software journey.</p>
-        <a href="#contact" style="text-decoration: none; color: #007BFF; font-weight: bold;">Get in Touch</a>
-    </section>
+  <section class="cards">
+    <!-- UnlockLater -->
+    <div class="card">
+      <h3>UnlockLater.com</h3>
+      <p>Create time-locked messages that reveal only when you want them to. A simple way to share surprises or important notes.</p>
+      <a href="https://unlocklater.com" target="_blank">Visit Site →</a>
+    </div>
 
-    <section>
-        <h2>Our Services</h2>
-        <p>Explore our range of services designed to elevate your software projects:</p>
-        <ul>
-            <li>Software Development</li>
-            <li>Consulting and Strategy</li>
-            <li>Quality Assurance and Testing</li>
-            <li>Project Management</li>
-        </ul>
-    </section>
+    <!-- DogFoodCheck -->
+    <div class="card">
+      <h3>DogFoodCheck.com</h3>
+      <p>Check if a food is safe for your dog and discover nutritional insights. Helping dog owners make informed choices.</p>
+      <a href="https://dogfoodcheck.com" target="_blank">Visit Site →</a>
+    </div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Ready to transform your software projects? Reach out to us:</p>
-        <p>Email: info@bytesparrow.com</p>
-        <p>Phone: (123) 456-7890</p>
-    </section>
+    <!-- Example Future Website -->
+    <!--
+    <div class="card">
+      <h3>FutureWebsite.com</h3>
+      <p>Short description about the future project. Replace this text when adding a new website.</p>
+      <a href="https://futurewebsite.com" target="_blank">Visit Site →</a>
+    </div>
+    -->
+  </section>
 
-    <footer>
-        <p>&copy; 2023 Byte Sparrow | Designed by Your Name</p>
-    </footer>
+  <footer>
+    <p>© 2025 ByteSparrow. All rights reserved.</p>
+  </footer>
 
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle("dark");
+      const btn = document.querySelector(".theme-toggle");
+      if (document.documentElement.classList.contains("dark")) {
+        btn.textContent = "☀️ Light";
+      } else {
+        btn.textContent = "🌙 Dark";
+      }
+    }
+  </script>
 </body>
 </html>
