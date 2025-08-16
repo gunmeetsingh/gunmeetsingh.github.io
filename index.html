@@ -113,6 +113,7 @@
       border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.25s, box-shadow 0.25s, background 0.3s, color 0.3s;
+      text-align: center;
     }
 
     .dark .card {
@@ -125,8 +126,15 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
     .card h3 {
-      margin-top: 0;
+      margin: 0.5rem 0;
       color: var(--text-light);
       transition: color 0.3s;
     }
@@ -196,6 +204,7 @@
   <section class="cards">
     <!-- UnlockLater -->
     <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/000000/lock.png" alt="UnlockLater Icon">
       <h3>UnlockLater.com</h3>
       <p>Create time-locked messages that reveal only when you want them to. A simple way to share surprises or important notes.</p>
       <a href="https://unlocklater.com" target="_blank">Visit Site →</a>
@@ -203,6 +212,7 @@
 
     <!-- DogFoodCheck -->
     <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/000000/dog.png" alt="DogFoodCheck Icon">
       <h3>DogFoodCheck.com</h3>
       <p>Check if a food is safe for your dog and discover nutritional insights. Helping dog owners make informed choices.</p>
       <a href="https://dogfoodcheck.com" target="_blank">Visit Site →</a>
@@ -211,6 +221,7 @@
     <!-- Example Future Website -->
     <!--
     <div class="card">
+      <img src="your-icon.png" alt="Future Website Icon">
       <h3>FutureWebsite.com</h3>
       <p>Short description about the future project. Replace this text when adding a new website.</p>
       <a href="https://futurewebsite.com" target="_blank">Visit Site →</a>
